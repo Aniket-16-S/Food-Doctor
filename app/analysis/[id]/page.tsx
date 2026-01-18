@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { useResultContext } from '../../../components/AppProviders';
 import LoadingAnimation from '../../../components/LoadingAnimation';
+import AnalysisDisplay from '../../../components/AnalysisDisplay';
 import { ArrowLeft, AlertTriangle, Info } from "lucide-react";
 import { getApiUrl } from '@/lib/config';
 import { getImageUrl } from '@/lib/utils';
@@ -139,13 +140,11 @@ export default function AnalysisPage() {
 
                 {/* Analysis Text Display */}
                 <div className="rounded-xl border bg-card p-6 shadow-md hover:shadow-lg transition-all animate-slideUp">
-                    <h2 className="mb-4 text-xl font-bold flex items-center gap-2">
-                        <Info className="h-5 w-5 text-primary" />
-                        Analysis
+                    <h2 className="mb-6 text-2xl font-bold flex items-center gap-2">
+                        <Info className="h-6 w-6 text-primary" />
+                        Product Analysis
                     </h2>
-                    <div className="rounded-lg bg-secondary/50 p-6 leading-relaxed">
-                        <p className="whitespace-pre-wrap text-base">{analysisText}</p>
-                    </div>
+                    <AnalysisDisplay analysisText={analysisText} />
                 </div>
 
             </main>
